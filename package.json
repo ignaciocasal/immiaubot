@@ -1,0 +1,23 @@
+{
+  "name": "ImmiAuBot",
+  "version": "1.0.0",
+  "description": "Australian Visa Processing Times Telegram Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "tsc && node dist/index.js bot",
+    "collect": "tsc && node dist/index.js collect",
+    "daily-check": "tsc && node dist/index.js daily-check"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "dotenv": "^16.6.1",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}

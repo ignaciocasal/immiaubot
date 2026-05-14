@@ -1,0 +1,56 @@
+import { config } from './config'
+import { collectAll } from './immi/collectAll'
+import { createBot } from './bot/telegram'
+import { registerStart } from './bot/commands/start'
+import { registerSubscribe } from './bot/commands/subscribe'
+import { registerUnsubscribe } from './bot/commands/unsubscribe'
+import { registerCheck } from './bot/commands/check'
+import { dailyCheck } from './jobs/dailyCheck'
+
+async function main(): Promise<void> {
+  const mode = process.argv[2] ?? 'bot'
+
+  switch (mode) {
+    case 'collect': {
+      await collectAll()
+      break
+    }
+    case 'daily-check': {
+      await dailyCheck()
+      break
+    }
+    case 'bot':
+    default: {
+      if (!config.telegramBotToken) {
+        console.error('TELEGRAM_BOT_TOKEN is required for bot mode')
+        process.exit(1)
+      }
+
+      const bot = createBot()
+
+      registerStart(bot)
+      registerSubscribe(bot)
+      registerUnsubscribe(bot)
+      registerCheck(bot)
+
+      console.log('Bot started. Listening for commands...')
+
+      if (process.platform === 'win32') {
+        const rl = (await import('readline')).createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        })
+        rl.on('SIGINT', () => process.exit())
+        rl.on('SIGTERM', () => process.exit())
+      } else {
+        process.on('SIGINT', () => process.exit())
+        process.on('SIGTERM', () => process.exit())
+      }
+    }
+  }
+}
+
+main().catch((err) => {
+  console.error('Fatal error:', err)
+  process.exit(1)
+})

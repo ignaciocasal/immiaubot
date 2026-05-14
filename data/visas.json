@@ -1,0 +1,392 @@
+{
+  "100": [
+    {
+      "key": "100:",
+      "streamName": "Main"
+    }
+  ],
+  "101": [
+    {
+      "key": "101:",
+      "streamName": "Main"
+    }
+  ],
+  "102": [
+    {
+      "key": "102:",
+      "streamName": "Main"
+    }
+  ],
+  "117": [
+    {
+      "key": "117:",
+      "streamName": "Main"
+    }
+  ],
+  "132": [
+    {
+      "key": "132:1",
+      "streamName": "Significant Business History"
+    }
+  ],
+  "155": [
+    {
+      "key": "155:",
+      "streamName": "Main"
+    }
+  ],
+  "157": [
+    {
+      "key": "157:",
+      "streamName": "Main"
+    }
+  ],
+  "186": [
+    {
+      "key": "186:3",
+      "streamName": "Direct Entry Pathway"
+    },
+    {
+      "key": "186:4",
+      "streamName": "Agreement Pathway"
+    },
+    {
+      "key": "186:5",
+      "streamName": "Transition Pathway"
+    }
+  ],
+  "187": [
+    {
+      "key": "187:8",
+      "streamName": "Transition Pathway"
+    }
+  ],
+  "188": [
+    {
+      "key": "188:9",
+      "streamName": "Business Innovation"
+    },
+    {
+      "key": "188:35",
+      "streamName": "Business Innovation Extension"
+    }
+  ],
+  "189": [
+    {
+      "key": "189:63",
+      "streamName": "Points-Tested"
+    },
+    {
+      "key": "189:62",
+      "streamName": "New Zealand"
+    }
+  ],
+  "190": [
+    {
+      "key": "190:",
+      "streamName": "Main"
+    }
+  ],
+  "191": [
+    {
+      "key": "191:76",
+      "streamName": "Regional Provisional Visa"
+    }
+  ],
+  "300": [
+    {
+      "key": "300:",
+      "streamName": "Main"
+    }
+  ],
+  "309": [
+    {
+      "key": "309:",
+      "streamName": "Main"
+    }
+  ],
+  "400": [
+    {
+      "key": "400:",
+      "streamName": "Main"
+    }
+  ],
+  "403": [
+    {
+      "key": "403:24",
+      "streamName": "Government Agreement"
+    },
+    {
+      "key": "403:25",
+      "streamName": "Foreign Government Agency"
+    },
+    {
+      "key": "403:26",
+      "streamName": "Domestic Worker (Diplomatic or Consular)"
+    },
+    {
+      "key": "403:78",
+      "streamName": "Pacific Australia Labour Mobility Scheme"
+    },
+    {
+      "key": "403:79",
+      "streamName": "Mobility Arrangement for Talented Early-professionals Scheme (MATES)"
+    }
+  ],
+  "407": [
+    {
+      "key": "407:",
+      "streamName": "Main"
+    }
+  ],
+  "408": [
+    {
+      "key": "408:50",
+      "streamName": "Entertainment Activities"
+    },
+    {
+      "key": "408:53",
+      "streamName": "Research Activities"
+    },
+    {
+      "key": "408:52",
+      "streamName": "Religious Work"
+    },
+    {
+      "key": "408:54",
+      "streamName": "Special Programs"
+    },
+    {
+      "key": "408:56",
+      "streamName": "Invited for Other Social and Cultural Activity"
+    },
+    {
+      "key": "408:55",
+      "streamName": "Exchange Arrangements"
+    },
+    {
+      "key": "408:58",
+      "streamName": "Superyacht Crew"
+    },
+    {
+      "key": "408:51",
+      "streamName": "Sporting Activities"
+    }
+  ],
+  "417": [
+    {
+      "key": "417:",
+      "streamName": "Main"
+    }
+  ],
+  "445": [
+    {
+      "key": "445:",
+      "streamName": "Main"
+    }
+  ],
+  "461": [
+    {
+      "key": "461:",
+      "streamName": "Main"
+    }
+  ],
+  "462": [
+    {
+      "key": "462:",
+      "streamName": "Main"
+    }
+  ],
+  "485": [
+    {
+      "key": "485:33",
+      "streamName": "Post-Vocational Education Work"
+    },
+    {
+      "key": "485:34",
+      "streamName": "Post-Higher Education Work"
+    }
+  ],
+  "491": [
+    {
+      "key": "491:71",
+      "streamName": "State/Territory Government Nominated Regional"
+    },
+    {
+      "key": "491:70",
+      "streamName": "Family Sponsored Regional"
+    }
+  ],
+  "494": [
+    {
+      "key": "494:72",
+      "streamName": "Employer Sponsored"
+    },
+    {
+      "key": "494:73",
+      "streamName": "Labour Agreement"
+    }
+  ],
+  "500": [
+    {
+      "key": "500:47",
+      "streamName": "Foreign Affairs or Defence Sector"
+    },
+    {
+      "key": "500:45",
+      "streamName": "Postgraduate Research Sector"
+    },
+    {
+      "key": "500:41",
+      "streamName": "Independent ELICOS Sector"
+    },
+    {
+      "key": "500:42",
+      "streamName": "Schools Sector"
+    },
+    {
+      "key": "500:43",
+      "streamName": "Vocational Education and Training Sector"
+    },
+    {
+      "key": "500:44",
+      "streamName": "Higher Education Sector"
+    },
+    {
+      "key": "500:46",
+      "streamName": "Non-Award Sector"
+    }
+  ],
+  "590": [
+    {
+      "key": "590:",
+      "streamName": "Main"
+    }
+  ],
+  "600": [
+    {
+      "key": "600:29",
+      "streamName": "Tourist"
+    },
+    {
+      "key": "600:30",
+      "streamName": "Sponsored Family"
+    },
+    {
+      "key": "600:31",
+      "streamName": "Business Visitor"
+    }
+  ],
+  "601": [
+    {
+      "key": "601:",
+      "streamName": "Main"
+    }
+  ],
+  "602": [
+    {
+      "key": "602:",
+      "streamName": "Main"
+    }
+  ],
+  "651": [
+    {
+      "key": "651:",
+      "streamName": "Main"
+    }
+  ],
+  "771": [
+    {
+      "key": "771:",
+      "streamName": "Main"
+    }
+  ],
+  "801": [
+    {
+      "key": "801:",
+      "streamName": "Main"
+    }
+  ],
+  "802": [
+    {
+      "key": "802:",
+      "streamName": "Main"
+    }
+  ],
+  "820": [
+    {
+      "key": "820:",
+      "streamName": "Main"
+    }
+  ],
+  "870": [
+    {
+      "key": "870:66",
+      "streamName": "Visa Application"
+    },
+    {
+      "key": "870:67",
+      "streamName": "Sponsorship"
+    }
+  ],
+  "887": [
+    {
+      "key": "887:",
+      "streamName": "Main"
+    }
+  ],
+  "888": [
+    {
+      "key": "888:12",
+      "streamName": "Business Innovation"
+    },
+    {
+      "key": "888:13",
+      "streamName": "Investor"
+    },
+    {
+      "key": "888:14",
+      "streamName": "Significant Investor"
+    }
+  ],
+  "988": [
+    {
+      "key": "988:",
+      "streamName": "Main"
+    }
+  ],
+  "858-3": [
+    {
+      "key": "858-3:",
+      "streamName": "Main"
+    }
+  ],
+  "858-4": [
+    {
+      "key": "858-4:",
+      "streamName": "Main"
+    }
+  ],
+  "482-1": [
+    {
+      "key": "482-1:80",
+      "streamName": "Labour Agreement"
+    },
+    {
+      "key": "482-1:81",
+      "streamName": "Core Skills"
+    },
+    {
+      "key": "482-1:82",
+      "streamName": "Specialist Skills"
+    },
+    {
+      "key": "482-1:66",
+      "streamName": "Nomination"
+    },
+    {
+      "key": "482-1:68",
+      "streamName": "Sponsorship"
+    }
+  ]
+}

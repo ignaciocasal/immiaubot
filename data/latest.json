@@ -1,0 +1,686 @@
+{
+  "100:": {
+    "visaName": "Partner visa (subclass 100)",
+    "streamName": "",
+    "subclassCode": "100",
+    "streamCode": "",
+    "p90Days": 536,
+    "p90Text": "18 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "101:": {
+    "visaName": "Child visa (subclass 101)",
+    "streamName": "",
+    "subclassCode": "101",
+    "streamCode": "",
+    "p90Days": 960,
+    "p90Text": "32 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "102:": {
+    "visaName": "Adoption visa  (subclass 102)",
+    "streamName": "",
+    "subclassCode": "102",
+    "streamCode": "",
+    "p90Days": 418,
+    "p90Text": "14 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "117:": {
+    "visaName": "Orphan Relative visa (subclass 117)",
+    "streamName": "",
+    "subclassCode": "117",
+    "streamCode": "",
+    "p90Days": 2930,
+    "p90Text": "96 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "132:1": {
+    "visaName": "Business Talent visa (subclass 132)",
+    "streamName": "Significant Business History",
+    "subclassCode": "132",
+    "streamCode": "1",
+    "p90Days": 2114,
+    "p90Text": "69 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "155:": {
+    "visaName": "Five Year Resident Return visa (subclass 155)",
+    "streamName": "",
+    "subclassCode": "155",
+    "streamCode": "",
+    "p90Days": 18,
+    "p90Text": "18 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "157:": {
+    "visaName": "Three Month Resident Return visa (subclass 157)",
+    "streamName": "",
+    "subclassCode": "157",
+    "streamCode": "",
+    "p90Days": 68,
+    "p90Text": "68 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "186:3": {
+    "visaName": "Employer Nomination Scheme (subclass 186)",
+    "streamName": "Direct Entry Pathway",
+    "subclassCode": "186",
+    "streamCode": "3",
+    "p90Days": 471,
+    "p90Text": "15 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "186:4": {
+    "visaName": "Employer Nomination Scheme (subclass 186)",
+    "streamName": "Agreement Pathway",
+    "subclassCode": "186",
+    "streamCode": "4",
+    "p90Days": 281,
+    "p90Text": "9 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "186:5": {
+    "visaName": "Employer Nomination Scheme (subclass 186)",
+    "streamName": "Transition Pathway",
+    "subclassCode": "186",
+    "streamCode": "5",
+    "p90Days": 445,
+    "p90Text": "15 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "187:8": {
+    "visaName": "Regional Sponsored Migration Scheme visa (subclass 187)",
+    "streamName": "Transition Pathway",
+    "subclassCode": "187",
+    "streamCode": "8",
+    "p90Days": 150,
+    "p90Text": "5 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "188:9": {
+    "visaName": "Business Innovation and Investment (Provisional) visa (subclass 188)",
+    "streamName": "Business Innovation",
+    "subclassCode": "188",
+    "streamCode": "9",
+    "p90Days": 1776,
+    "p90Text": "58 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "188:35": {
+    "visaName": "Business Innovation and Investment (Provisional) visa (subclass 188)",
+    "streamName": "Business Innovation Extension",
+    "subclassCode": "188",
+    "streamCode": "35",
+    "p90Days": 217,
+    "p90Text": "7 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "189:63": {
+    "visaName": "Skilled - Independent visa (subclass 189)",
+    "streamName": "Points-Tested",
+    "subclassCode": "189",
+    "streamCode": "63",
+    "p90Days": 191,
+    "p90Text": "6 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "189:62": {
+    "visaName": "Skilled - Independent visa (subclass 189)",
+    "streamName": "New Zealand",
+    "subclassCode": "189",
+    "streamCode": "62",
+    "p90Days": 1825,
+    "p90Text": "60 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "190:": {
+    "visaName": "Skilled - Nominated visa (subclass 190)",
+    "streamName": "",
+    "subclassCode": "190",
+    "streamCode": "",
+    "p90Days": 485,
+    "p90Text": "16 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "191:76": {
+    "visaName": "Permanent Residence (Skilled Regional) (subclass 191)",
+    "streamName": "Regional Provisional Visa",
+    "subclassCode": "191",
+    "streamCode": "76",
+    "p90Days": 238,
+    "p90Text": "8 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "300:": {
+    "visaName": "Prospective Marriage visa (subclass 300)",
+    "streamName": "",
+    "subclassCode": "300",
+    "streamCode": "",
+    "p90Days": 750,
+    "p90Text": "25 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "309:": {
+    "visaName": "Partner (Provisional) visa (subclass 309)",
+    "streamName": "",
+    "subclassCode": "309",
+    "streamCode": "",
+    "p90Days": 756,
+    "p90Text": "25 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "400:": {
+    "visaName": "Temporary Work (Short Stay Activity) visa (subclass 400)",
+    "streamName": "",
+    "subclassCode": "400",
+    "streamCode": "",
+    "p90Days": 20,
+    "p90Text": "20 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "403:24": {
+    "visaName": "Temporary Work (International Relations) visa (subclass 403)",
+    "streamName": "Government Agreement",
+    "subclassCode": "403",
+    "streamCode": "24",
+    "p90Days": 20,
+    "p90Text": "20 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "403:25": {
+    "visaName": "Temporary Work (International Relations) visa (subclass 403)",
+    "streamName": "Foreign Government Agency",
+    "subclassCode": "403",
+    "streamCode": "25",
+    "p90Days": 19,
+    "p90Text": "19 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "403:26": {
+    "visaName": "Temporary Work (International Relations) visa (subclass 403)",
+    "streamName": "Domestic Worker (Diplomatic or Consular)",
+    "subclassCode": "403",
+    "streamCode": "26",
+    "p90Days": 81,
+    "p90Text": "81 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "403:78": {
+    "visaName": "Temporary Work (International Relations) visa (subclass 403)",
+    "streamName": "Pacific Australia Labour Mobility Scheme",
+    "subclassCode": "403",
+    "streamCode": "78",
+    "p90Days": 21,
+    "p90Text": "21 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "403:79": {
+    "visaName": "Temporary Work (International Relations) visa (subclass 403)",
+    "streamName": "Mobility Arrangement for Talented Early-professionals Scheme (MATES)",
+    "subclassCode": "403",
+    "streamCode": "79",
+    "p90Days": 123,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "407:": {
+    "visaName": "Training visa (subclass 407)",
+    "streamName": "",
+    "subclassCode": "407",
+    "streamCode": "",
+    "p90Days": 418,
+    "p90Text": "14 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "408:50": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Entertainment Activities",
+    "subclassCode": "408",
+    "streamCode": "50",
+    "p90Days": 24,
+    "p90Text": "24 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "408:53": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Research Activities",
+    "subclassCode": "408",
+    "streamCode": "53",
+    "p90Days": 444,
+    "p90Text": "15 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "408:52": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Religious Work",
+    "subclassCode": "408",
+    "streamCode": "52",
+    "p90Days": 279,
+    "p90Text": "9 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "408:54": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Special Programs",
+    "subclassCode": "408",
+    "streamCode": "54",
+    "p90Days": 107,
+    "p90Text": "3 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "408:56": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Invited for Other Social and Cultural Activity",
+    "subclassCode": "408",
+    "streamCode": "56",
+    "p90Days": 33,
+    "p90Text": "33 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "408:55": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Exchange Arrangements",
+    "subclassCode": "408",
+    "streamCode": "55",
+    "p90Days": 148,
+    "p90Text": "5 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "408:58": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Superyacht Crew",
+    "subclassCode": "408",
+    "streamCode": "58",
+    "p90Days": 31,
+    "p90Text": "31 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "408:51": {
+    "visaName": "Temporary Activity visa (subclass 408)",
+    "streamName": "Sporting Activities",
+    "subclassCode": "408",
+    "streamCode": "51",
+    "p90Days": 82,
+    "p90Text": "82 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "417:": {
+    "visaName": "Working Holiday visa (subclass 417)",
+    "streamName": "",
+    "subclassCode": "417",
+    "streamCode": "",
+    "p90Days": 72,
+    "p90Text": "72 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "445:": {
+    "visaName": "Dependent Child visa (subclass 445)",
+    "streamName": "",
+    "subclassCode": "445",
+    "streamCode": "",
+    "p90Days": 863,
+    "p90Text": "28 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "461:": {
+    "visaName": "New Zealand Citizen Family Relationship (Temporary) visa (subclass 461)",
+    "streamName": "",
+    "subclassCode": "461",
+    "streamCode": "",
+    "p90Days": 132,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "462:": {
+    "visaName": "Work and Holiday visa (subclass 462)",
+    "streamName": "",
+    "subclassCode": "462",
+    "streamCode": "",
+    "p90Days": 120,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "485:33": {
+    "visaName": "Temporary Graduate visa (subclass 485)",
+    "streamName": "Post-Vocational Education Work",
+    "subclassCode": "485",
+    "streamCode": "33",
+    "p90Days": 128,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "485:34": {
+    "visaName": "Temporary Graduate visa (subclass 485)",
+    "streamName": "Post-Higher Education Work",
+    "subclassCode": "485",
+    "streamCode": "34",
+    "p90Days": 34,
+    "p90Text": "34 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "491:71": {
+    "visaName": "Skilled Work Regional (Provisional) visa (subclass 491)",
+    "streamName": "State/Territory Government Nominated Regional",
+    "subclassCode": "491",
+    "streamCode": "71",
+    "p90Days": 778,
+    "p90Text": "26 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "491:70": {
+    "visaName": "Skilled Work Regional (Provisional) visa (subclass 491)",
+    "streamName": "Family Sponsored Regional",
+    "subclassCode": "491",
+    "streamCode": "70",
+    "p90Days": 877,
+    "p90Text": "29 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "494:72": {
+    "visaName": "Skilled Employer Sponsored Regional (Provisional) visa (subclass 494)",
+    "streamName": "Employer Sponsored",
+    "subclassCode": "494",
+    "streamCode": "72",
+    "p90Days": 335,
+    "p90Text": "11 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "494:73": {
+    "visaName": "Skilled Employer Sponsored Regional (Provisional) visa (subclass 494)",
+    "streamName": "Labour Agreement",
+    "subclassCode": "494",
+    "streamCode": "73",
+    "p90Days": 270,
+    "p90Text": "9 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "500:47": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Foreign Affairs or Defence Sector",
+    "subclassCode": "500",
+    "streamCode": "47",
+    "p90Days": 17,
+    "p90Text": "17 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "500:45": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Postgraduate Research Sector",
+    "subclassCode": "500",
+    "streamCode": "45",
+    "p90Days": 66,
+    "p90Text": "66 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "500:41": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Independent ELICOS Sector",
+    "subclassCode": "500",
+    "streamCode": "41",
+    "p90Days": 42,
+    "p90Text": "44 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "500:42": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Schools Sector",
+    "subclassCode": "500",
+    "streamCode": "42",
+    "p90Days": 92,
+    "p90Text": "3 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "500:43": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Vocational Education and Training Sector",
+    "subclassCode": "500",
+    "streamCode": "43",
+    "p90Days": 203,
+    "p90Text": "7 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "500:44": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Higher Education Sector",
+    "subclassCode": "500",
+    "streamCode": "44",
+    "p90Days": 196,
+    "p90Text": "6 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "500:46": {
+    "visaName": "Student visa (subclass 500)",
+    "streamName": "Non-Award Sector",
+    "subclassCode": "500",
+    "streamCode": "46",
+    "p90Days": 37,
+    "p90Text": "37 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "590:": {
+    "visaName": "Student Guardian visa (subclass 590)",
+    "streamName": "",
+    "subclassCode": "590",
+    "streamCode": "",
+    "p90Days": 135,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "600:29": {
+    "visaName": "Visitor visa (subclass 600)",
+    "streamName": "Tourist",
+    "subclassCode": "600",
+    "streamCode": "29",
+    "p90Days": 29,
+    "p90Text": "29 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "600:30": {
+    "visaName": "Visitor visa (subclass 600)",
+    "streamName": "Sponsored Family",
+    "subclassCode": "600",
+    "streamCode": "30",
+    "p90Days": 79,
+    "p90Text": "79 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "600:31": {
+    "visaName": "Visitor visa (subclass 600)",
+    "streamName": "Business Visitor",
+    "subclassCode": "600",
+    "streamCode": "31",
+    "p90Days": 23,
+    "p90Text": "23 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "601:": {
+    "visaName": "Electronic Travel Authority (subclass 601)",
+    "streamName": "",
+    "subclassCode": "601",
+    "streamCode": "",
+    "p90Days": 1,
+    "p90Text": "Less than 1 Day",
+    "updatedAt": "2026-05-14"
+  },
+  "602:": {
+    "visaName": "Medical Treatment visa (subclass 602)",
+    "streamName": "",
+    "subclassCode": "602",
+    "streamCode": "",
+    "p90Days": 115,
+    "p90Text": "4 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "651:": {
+    "visaName": "eVisitor visa (subclass 651)",
+    "streamName": "",
+    "subclassCode": "651",
+    "streamCode": "",
+    "p90Days": 1,
+    "p90Text": "Less than 1 Day",
+    "updatedAt": "2026-05-14"
+  },
+  "771:": {
+    "visaName": "Transit visa (subclass 771)",
+    "streamName": "",
+    "subclassCode": "771",
+    "streamCode": "",
+    "p90Days": 21,
+    "p90Text": "21 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "801:": {
+    "visaName": "Partner visa (subclass 801)",
+    "streamName": "",
+    "subclassCode": "801",
+    "streamCode": "",
+    "p90Days": 524,
+    "p90Text": "17 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "802:": {
+    "visaName": "Child visa (subclass 802)",
+    "streamName": "",
+    "subclassCode": "802",
+    "streamCode": "",
+    "p90Days": 878,
+    "p90Text": "29 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "820:": {
+    "visaName": "Partner visa (subclass 820)",
+    "streamName": "",
+    "subclassCode": "820",
+    "streamCode": "",
+    "p90Days": 740,
+    "p90Text": "24 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "870:66": {
+    "visaName": "Sponsored Parent (Temporary)  (subclass 870)",
+    "streamName": "Visa Application",
+    "subclassCode": "870",
+    "streamCode": "66",
+    "p90Days": 277,
+    "p90Text": "9 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "870:67": {
+    "visaName": "Sponsored Parent (Temporary) visa (subclass 870)",
+    "streamName": "Sponsorship",
+    "subclassCode": "870",
+    "streamCode": "67",
+    "p90Days": 144,
+    "p90Text": "5 months",
+    "updatedAt": "2026-05-14"
+  },
+  "887:": {
+    "visaName": "Skilled - Regional visa (subclass 887)",
+    "streamName": "",
+    "subclassCode": "887",
+    "streamCode": "",
+    "p90Days": 539,
+    "p90Text": "18 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "888:12": {
+    "visaName": "Business Innovation and Investment (Permanent) visa (subclass 888)",
+    "streamName": "Business Innovation",
+    "subclassCode": "888",
+    "streamCode": "12",
+    "p90Days": 218,
+    "p90Text": "7 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "888:13": {
+    "visaName": "Business Innovation and Investment (Permanent) visa (subclass 888)",
+    "streamName": "Investor",
+    "subclassCode": "888",
+    "streamCode": "13",
+    "p90Days": 150,
+    "p90Text": "5 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "888:14": {
+    "visaName": "Business Innovation and Investment (Permanent) visa (subclass 888)",
+    "streamName": "Significant Investor",
+    "subclassCode": "888",
+    "streamCode": "14",
+    "p90Days": 203,
+    "p90Text": "7 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "988:": {
+    "visaName": "Maritime Crew Visa (subclass 988)",
+    "streamName": "",
+    "subclassCode": "988",
+    "streamCode": "",
+    "p90Days": 1,
+    "p90Text": "1 Day",
+    "updatedAt": "2026-05-14"
+  },
+  "858-3:": {
+    "visaName": "Global Talent visa (subclass 858)",
+    "streamName": "",
+    "subclassCode": "858-3",
+    "streamCode": "",
+    "p90Days": 643,
+    "p90Text": "21 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "858-4:": {
+    "visaName": "National Innovation visa (subclass 858)",
+    "streamName": "",
+    "subclassCode": "858-4",
+    "streamCode": "",
+    "p90Days": 207,
+    "p90Text": "7 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "482-1:80": {
+    "visaName": "Skills In Demand visa (482)",
+    "streamName": "Labour Agreement",
+    "subclassCode": "482-1",
+    "streamCode": "80",
+    "p90Days": 247,
+    "p90Text": "8 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "482-1:81": {
+    "visaName": "Skills In Demand visa (482)",
+    "streamName": "Core Skills",
+    "subclassCode": "482-1",
+    "streamCode": "81",
+    "p90Days": 248,
+    "p90Text": "8 Months",
+    "updatedAt": "2026-05-14"
+  },
+  "482-1:82": {
+    "visaName": "Skills In Demand visa (482)",
+    "streamName": "Specialist Skills",
+    "subclassCode": "482-1",
+    "streamCode": "82",
+    "p90Days": 51,
+    "p90Text": "51 Days",
+    "updatedAt": "2026-05-14"
+  },
+  "482-1:66": {
+    "visaName": "Skills In Demand visa (482)",
+    "streamName": "Nomination",
+    "subclassCode": "482-1",
+    "streamCode": "66",
+    "p90Days": 218,
+    "p90Text": "8 months",
+    "updatedAt": "2026-05-14"
+  },
+  "482-1:68": {
+    "visaName": "Skills In Demand visa (482)",
+    "streamName": "Sponsorship",
+    "subclassCode": "482-1",
+    "streamCode": "68",
+    "p90Days": 108,
+    "p90Text": "4 months",
+    "updatedAt": "2026-05-14"
+  }
+}
