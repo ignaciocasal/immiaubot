@@ -27,5 +27,5 @@ primary_region = 'syd'
   destination = "/data"
 
 [processes]
-app = "node dist/index.js"
-worker = "node dist/index.js daily-check"
+app = "node dist/index.js bot"
+worker = "node dist/index.js worker"

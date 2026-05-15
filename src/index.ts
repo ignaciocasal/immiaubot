@@ -26,6 +26,23 @@ async function main(): Promise<void> {
         process.exit(1)
       }
     }
+    case 'worker': {
+      console.log('Worker started')
+
+      // run immediately on boot
+      await dailyCheck()
+
+      // then schedule every 24h
+      setInterval(async () => {
+        try {
+          await dailyCheck()
+        } catch (err) {
+          console.error('Worker daily check failed:', err)
+        }
+      }, 24 * 60 * 60 * 1000)
+
+      break
+    }
     case 'bot':
     default: {
       if (!config.telegramBotToken) {
