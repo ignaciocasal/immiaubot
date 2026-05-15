@@ -25,3 +25,7 @@ primary_region = 'syd'
 [mounts]
   source = "data_volume"
   destination = "/data"
+
+[processes]
+app = "node dist/index.js"
+worker = "node dist/index.js daily-check"

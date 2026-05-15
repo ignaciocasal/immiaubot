@@ -17,8 +17,14 @@ async function main(): Promise<void> {
       break
     }
     case 'daily-check': {
-      await dailyCheck()
-      break
+      try {
+        await dailyCheck()
+        console.log('Daily check completed')
+        process.exit(0)
+      } catch (err) {
+        console.error('Daily check failed:', err)
+        process.exit(1)
+      }
     }
     case 'bot':
     default: {
