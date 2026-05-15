@@ -60,6 +60,16 @@ async function main(): Promise<void> {
 
       console.log('Bot started. Listening for commands...')
 
+      const runDailyCheck = async () => {
+        try {
+          await dailyCheck()
+        } catch (err) {
+          console.error('Daily check failed:', err)
+        }
+      }
+      runDailyCheck()
+      setInterval(runDailyCheck, 12 * 60 * 60 * 1000)
+
       if (process.platform === 'win32') {
         const rl = (await import('readline')).createInterface({
           input: process.stdin,
