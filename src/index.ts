@@ -5,6 +5,7 @@ import { registerStart } from './bot/commands/start'
 import { registerSubscribe } from './bot/commands/subscribe'
 import { registerUnsubscribe } from './bot/commands/unsubscribe'
 import { registerCheck } from './bot/commands/check'
+import { registerList } from './bot/commands/list'
 import { dailyCheck } from './jobs/dailyCheck'
 
 async function main(): Promise<void> {
@@ -32,6 +33,7 @@ async function main(): Promise<void> {
       registerSubscribe(bot)
       registerUnsubscribe(bot)
       registerCheck(bot)
+      registerList(bot)
 
       console.log('Bot started. Listening for commands...')
 
