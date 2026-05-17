@@ -1,15 +1,12 @@
 import { VisaStream } from '../../types'
 
-export function buildStreamOptions(streams: VisaStream[]): string {
-  return streams
-    .map((s, i) => `${i + 1}. ${s.streamName}`)
-    .join('\n')
+interface InlineKeyboardButton {
+  text: string
+  callback_data: string
 }
 
-export function parseStreamChoice(text: string, streams: VisaStream[]): VisaStream | null {
-  const num = parseInt(text, 10)
-  if (isNaN(num) || num < 1 || num > streams.length) return null
-  return streams[num - 1] ?? null
+interface InlineKeyboardMarkup {
+  inline_keyboard: InlineKeyboardButton[][]
 }
 
 export function formatVisaEstimate(
@@ -18,8 +15,32 @@ export function formatVisaEstimate(
   p90: string | null
 ): string {
   const lines = [`*${visaName}*`, streamName ? `_${streamName}_` : '', '']
-
   if (p90) lines.push(`90%: ${p90}`)
-
   return lines.join('\n')
+}
+
+export function buildStreamKeyboard(
+  streams: VisaStream[],
+  actionPrefix: 'cs' | 'ss' | 'us'
+): InlineKeyboardMarkup {
+  const rows: InlineKeyboardButton[][] = streams.map(s => [{
+    text: s.streamName,
+    callback_data: `${actionPrefix}:${s.key}`,
+  }])
+  return { inline_keyboard: rows }
+}
+
+export function displaySubclass(subclass: string): string {
+  return subclass.endsWith('-1') ? subclass.slice(0, -2) : subclass
+}
+
+export function resolveSubclass(
+  input: string,
+  visas: Record<string, VisaStream[]>
+): string | null {
+  const upper = input.toUpperCase()
+  if (visas[upper]) return upper
+  const withDash = `${upper}-1`
+  if (visas[withDash]) return withDash
+  return null
 }

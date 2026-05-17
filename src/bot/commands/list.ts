@@ -3,6 +3,7 @@ import path from 'path'
 import { config } from '../../config'
 import { readJson } from '../../storage/readJson'
 import { Subscriptions, VisaStream } from '../../types'
+import { displaySubclass } from '../keyboards/visaOptions'
 
 function loadVisas(): Record<string, VisaStream[]> {
   return readJson<Record<string, VisaStream[]>>(path.join(config.dataDir, 'visas.json'), {})
@@ -45,13 +46,11 @@ export function registerList(bot: TelegramBot): void {
     for (const key of userKeys) {
       const info = keyToName.get(key)
       if (info) {
-        lines.push(`• *${info.subclass}* — ${info.stream}`)
+        lines.push(`• *${displaySubclass(info.subclass)}* — ${info.stream}`)
       } else {
         lines.push(`• ${key} _(no longer available)_`)
       }
     }
-
-    lines.push('', `Total: ${userKeys.length} subscription${userKeys.length === 1 ? '' : 's'}`)
 
     bot.sendMessage(chatId, lines.join('\n'), { parse_mode: 'Markdown' })
   })

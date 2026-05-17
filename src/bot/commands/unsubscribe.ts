@@ -3,10 +3,8 @@ import path from 'path'
 import { config } from '../../config'
 import { readJson } from '../../storage/readJson'
 import { writeJson } from '../../storage/writeJson'
-import { Subscriptions, TempSelection, VisaStream } from '../../types'
-import { buildStreamOptions, parseStreamChoice } from '../keyboards/visaOptions'
-
-const tempUnsubSelections = new Map<number, TempSelection>()
+import { Subscriptions, VisaStream } from '../../types'
+import { buildStreamKeyboard, resolveSubclass, displaySubclass } from '../keyboards/visaOptions'
 
 function loadVisas(): Record<string, VisaStream[]> {
   return readJson<Record<string, VisaStream[]>>(path.join(config.dataDir, 'visas.json'), {})
@@ -28,105 +26,47 @@ export function registerUnsubscribe(bot: TelegramBot): void {
       return
     }
 
-    handleUnsubscribeFlow(bot, chatId, subclass.toUpperCase())
-  })
-
-  bot.on('message', (msg) => {
-    const chatId = msg.chat.id
-    const temp = tempUnsubSelections.get(chatId)
-    if (!temp || temp.step !== 'awaiting_stream_choice') return
-    if (!msg.text) return
-    if (msg.text.startsWith('/')) return
-
     const visas = loadVisas()
-    const streams = visas[temp.subclassCode]
-    if (!streams) {
-      bot.sendMessage(chatId, 'This visa subclass is no longer available.')
-      tempUnsubSelections.delete(chatId)
+    const resolved = resolveSubclass(subclass, visas)
+
+    if (!resolved) {
+      bot.sendMessage(
+        chatId,
+        `Visa subclass *${subclass.toUpperCase()}* not found.`,
+        { parse_mode: 'Markdown' }
+      )
       return
     }
 
-    const chosen = parseStreamChoice(msg.text, streams)
-    if (!chosen) {
-      bot.sendMessage(chatId, `Invalid choice. Reply with a number 1-${streams.length}.`)
+    const streams = visas[resolved]
+
+    if (streams.length === 1) {
+      unsubscribeFromStream(bot, chatId, streams[0])
       return
     }
 
-    tempUnsubSelections.delete(chatId)
-
-    const subs = loadSubscriptions()
-    const chatKey = String(chatId)
-    const userSubs = subs[chatKey] ?? []
-
-    if (!userSubs.includes(chosen.key)) {
-      bot.sendMessage(chatId, `You are not subscribed to *${chosen.streamName}* (${temp.subclassCode}).`, {
-        parse_mode: 'Markdown',
-      })
-      return
-    }
-
-    subs[chatKey] = userSubs.filter((k) => k !== chosen.key)
-    writeJson(path.join(config.dataDir, 'subscriptions.json'), subs)
-    bot.sendMessage(chatId, `❌ Unsubscribed from *${chosen.streamName}* (${temp.subclassCode}).`, {
+    bot.sendMessage(chatId, `Subclass *${displaySubclass(resolved)}* has multiple streams:\n\nChoose one:`, {
       parse_mode: 'Markdown',
+      reply_markup: buildStreamKeyboard(streams, 'us'),
     })
   })
 }
 
-async function handleUnsubscribeFlow(
-  bot: TelegramBot,
-  chatId: number,
-  subclassCode: string
-): Promise<void> {
-  const visas = loadVisas()
-  const streams = visas[subclassCode]
+function unsubscribeFromStream(bot: TelegramBot, chatId: number, stream: VisaStream): void {
+  const subs = loadSubscriptions()
+  const chatKey = String(chatId)
+  const userSubs = subs[chatKey] ?? []
 
-  if (!streams) {
-    bot.sendMessage(
-      chatId,
-      `Visa subclass *${subclassCode}* not found.`,
-      { parse_mode: 'Markdown' }
-    )
-    return
-  }
-
-  if (streams.length === 1) {
-    const stream = streams[0]
-    const subs = loadSubscriptions()
-    const chatKey = String(chatId)
-    const userSubs = subs[chatKey] ?? []
-
-    if (!userSubs.includes(stream.key)) {
-      bot.sendMessage(chatId, `You are not subscribed to *${subclassCode}*.`, {
-        parse_mode: 'Markdown',
-      })
-      return
-    }
-
-    subs[chatKey] = userSubs.filter((k) => k !== stream.key)
-    writeJson(path.join(config.dataDir, 'subscriptions.json'), subs)
-    bot.sendMessage(chatId, `❌ Unsubscribed from *${subclassCode}*.`, {
+  if (!userSubs.includes(stream.key)) {
+    bot.sendMessage(chatId, `You are not subscribed to *${stream.streamName}* (${displaySubclass(stream.key.split(':')[0])}).`, {
       parse_mode: 'Markdown',
     })
     return
   }
 
-  tempUnsubSelections.set(chatId, {
-    chatId,
-    subclassCode,
-    visaKey: null,
-    step: 'awaiting_stream_choice',
+  subs[chatKey] = userSubs.filter(k => k !== stream.key)
+  writeJson(path.join(config.dataDir, 'subscriptions.json'), subs)
+  bot.sendMessage(chatId, `❌ Unsubscribed from *${stream.streamName}* (${displaySubclass(stream.key.split(':')[0])}).`, {
+    parse_mode: 'Markdown',
   })
-
-  const msg = [
-    `Subclass *${subclassCode}* has multiple streams.`,
-    '',
-    'Choose one to unsubscribe:',
-    '',
-    buildStreamOptions(streams),
-    '',
-    `Reply with 1-${streams.length}.`,
-  ].join('\n')
-
-  bot.sendMessage(chatId, msg, { parse_mode: 'Markdown' })
 }

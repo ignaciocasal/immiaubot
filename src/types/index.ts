@@ -30,13 +30,6 @@ export interface Change {
   }[]
 }
 
-export interface TempSelection {
-  chatId: number
-  subclassCode: string
-  visaKey: string | null
-  step: 'awaiting_stream_choice' | 'complete'
-}
-
 export interface VisaListRow {
   VisaSubclassText: string
   VisaSubclassCode: string
