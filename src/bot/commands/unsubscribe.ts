@@ -22,7 +22,7 @@ export function registerUnsubscribe(bot: TelegramBot): void {
     if (!subclass) {
       const visas = loadVisas()
       const popular = getPopularSubclasses(visas)
-      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type `/unsubscribe <subclass>`', {
+      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type:\n`/unsubscribe <subclass>`', {
         parse_mode: 'Markdown',
         reply_markup: buildSubclassKeyboard(popular, 'uv'),
       })

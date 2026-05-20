@@ -22,7 +22,7 @@ export function registerNotify(bot: TelegramBot): void {
     if (!subclass) {
       const visas = loadVisas()
       const popular = getPopularSubclasses(visas)
-      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type `/notify <subclass>`', {
+      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type:\n`/notify <subclass>`', {
         parse_mode: 'Markdown',
         reply_markup: buildSubclassKeyboard(popular, 'sb'),
       })
