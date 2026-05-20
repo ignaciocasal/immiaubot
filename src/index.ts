@@ -53,6 +53,15 @@ async function main(): Promise<void> {
 
       const bot = createBot()
 
+      const commands = [
+        { command: 'start', description: 'Welcome message and usage info' },
+        { command: 'check', description: 'Check current visa processing times' },
+        { command: 'subscribe', description: 'Subscribe to a visa for change alerts' },
+        { command: 'unsubscribe', description: 'Unsubscribe from a visa' },
+        { command: 'list', description: 'Show your current subscriptions' },
+      ]
+      bot.setMyCommands(commands)
+
       registerStart(bot)
       registerSubscribe(bot)
       registerUnsubscribe(bot)

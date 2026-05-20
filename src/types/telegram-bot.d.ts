@@ -33,6 +33,11 @@ declare module 'node-telegram-bot-api' {
     reply_markup?: InlineKeyboardMarkup
   }
 
+  interface BotCommand {
+    command: string
+    description: string
+  }
+
   class TelegramBot {
     constructor(token: string, options?: { polling?: boolean })
     onText(regexp: RegExp, callback: (msg: Message, match: RegExpExecArray | null) => void): void
@@ -40,6 +45,7 @@ declare module 'node-telegram-bot-api' {
     sendMessage(chatId: number, text: string, options?: SendMessageOptions): Promise<Message>
     editMessageText(text: string, options: EditMessageTextOptions): Promise<Message>
     answerCallbackQuery(callbackQueryId: string): Promise<boolean>
+    setMyCommands(commands: BotCommand[]): Promise<boolean>
   }
 
   export = TelegramBot
