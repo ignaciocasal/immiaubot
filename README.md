@@ -5,7 +5,7 @@ A **Telegram bot** that monitors and notifies you about changes to Australian vi
 ## Features
 
 - **Real-time queries** — Check processing times for any visa subclass via `/check <subclass>`.
-- **Change notifications** — Subscribe to visa subclasses with `/subscribe` and receive a Telegram message whenever the processing time estimate changes.
+- **Change notifications** — Get notified about visa subclasses with `/notify` and receive a Telegram message whenever the processing time estimate changes.
 - **Automated daily checks** — A GitHub Actions workflow scrapes the official Home Affairs website daily and pushes notifications to subscribed users.
 - **Multi-stream support** — Visa subclasses with multiple streams (e.g., 482, 858) are handled with an interactive stream picker.
 
@@ -15,7 +15,7 @@ A **Telegram bot** that monitors and notifies you about changes to Australian vi
 |---|---|
 | `/start` | Show welcome message and available commands |
 | `/check <subclass>` | Get the current processing time for a visa (e.g., `/check 189`) |
-| `/subscribe <subclass>` | Subscribe to change notifications for a visa |
+| `/notify <subclass>` | Get notified when a visa's processing time changes |
 | `/unsubscribe <subclass>` | Unsubscribe from change notifications |
 
 ## How it works

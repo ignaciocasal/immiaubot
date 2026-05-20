@@ -23,7 +23,7 @@ export function registerList(bot: TelegramBot): void {
     if (!userKeys || userKeys.length === 0) {
       bot.sendMessage(
         chatId,
-        'You have no subscriptions. Use `/subscribe <subclass>` to add one.',
+        'You have no subscriptions. Use `/notify <subclass>` to add one.',
         { parse_mode: 'Markdown' }
       )
       return

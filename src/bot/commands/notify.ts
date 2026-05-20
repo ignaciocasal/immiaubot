@@ -14,15 +14,15 @@ function loadSubscriptions(): Subscriptions {
   return readJson<Subscriptions>(path.join(config.dataDir, 'subscriptions.json'), {})
 }
 
-export function registerSubscribe(bot: TelegramBot): void {
-  bot.onText(/^\/subscribe(?:\s+(\w+))?$/, (msg, match) => {
+export function registerNotify(bot: TelegramBot): void {
+  bot.onText(/^\/notify(?:\s+(\w+))?$/, (msg, match) => {
     const chatId = msg.chat.id
     const subclass = match?.[1]
 
     if (!subclass) {
       const visas = loadVisas()
       const popular = getPopularSubclasses(visas)
-      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type `/subscribe <subclass>`', {
+      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type `/notify <subclass>`', {
         parse_mode: 'Markdown',
         reply_markup: buildSubclassKeyboard(popular, 'sb'),
       })
@@ -44,7 +44,7 @@ export function registerSubscribe(bot: TelegramBot): void {
     const streams = visas[resolved]
 
     if (streams.length === 1) {
-      subscribeToStream(bot, chatId, streams[0])
+      notifyForStream(bot, chatId, streams[0])
       return
     }
 
@@ -55,7 +55,7 @@ export function registerSubscribe(bot: TelegramBot): void {
   })
 }
 
-function subscribeToStream(bot: TelegramBot, chatId: number, stream: VisaStream): void {
+function notifyForStream(bot: TelegramBot, chatId: number, stream: VisaStream): void {
   const subs = loadSubscriptions()
   const chatKey = String(chatId)
   if (!subs[chatKey]) subs[chatKey] = []

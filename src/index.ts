@@ -2,7 +2,7 @@ import { config } from './config'
 import { collectAll } from './immi/collectAll'
 import { createBot } from './bot/telegram'
 import { registerStart } from './bot/commands/start'
-import { registerSubscribe } from './bot/commands/subscribe'
+import { registerNotify } from './bot/commands/notify'
 import { registerUnsubscribe } from './bot/commands/unsubscribe'
 import { registerCheck } from './bot/commands/check'
 import { registerList } from './bot/commands/list'
@@ -56,14 +56,14 @@ async function main(): Promise<void> {
       const commands = [
         { command: 'start', description: 'Welcome message and usage info' },
         { command: 'check', description: 'Check current visa processing times' },
-        { command: 'subscribe', description: 'Subscribe to a visa for change alerts' },
+        { command: 'notify', description: 'Get notified when visa processing times change' },
         { command: 'unsubscribe', description: 'Unsubscribe from a visa' },
         { command: 'list', description: 'Show your current subscriptions' },
       ]
       bot.setMyCommands(commands)
 
       registerStart(bot)
-      registerSubscribe(bot)
+      registerNotify(bot)
       registerUnsubscribe(bot)
       registerCheck(bot)
       registerList(bot)
