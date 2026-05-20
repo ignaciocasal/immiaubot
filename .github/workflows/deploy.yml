@@ -17,13 +17,27 @@ jobs:
 
       - name: Build and push Docker image
         run: |-
-          gcloud builds submit \
-            --config cloudbuild.yaml
+          gcloud builds submit --config cloudbuild.yaml
 
-      - name: Update VM container
+      - name: SSH into VM and update container
         run: |-
-          gcloud compute instances update-container immiaubot \
-            --zone=us-west1-a \
-            --container-image=us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/immiaubot/app:latest \
-            --container-env=TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
-            --container-mount-disk=mount-path="/data",name=immiaubot-data,mode=rw
+          VM="immiaubot"
+          ZONE="us-west1-a"
+          PROJECT="${{ secrets.GCP_PROJECT_ID }}"
+          IMAGE="us-west1-docker.pkg.dev/$PROJECT/immiaubot/app:latest"
+          SA_EMAIL=$(gcloud projects describe "$PROJECT" --format='value(projectNumber)')-compute@developer.gserviceaccount.com
+
+          gcloud iam service-accounts keys create /tmp/ar-key.json \
+            --iam-account="$SA_EMAIL" --quiet
+          gcloud compute scp /tmp/ar-key.json "$VM:/tmp/ar-key.json" \
+            --zone="$ZONE" --quiet
+
+          gcloud compute ssh "$VM" --zone="$ZONE" -- \
+            "cat /tmp/ar-key.json | docker login -u _json_key --password-stdin https://us-west1-docker.pkg.dev && \
+             docker pull $IMAGE && \
+             docker stop \$(docker ps -q) && docker rm \$(docker ps -aq) && \
+             docker run -d --restart=always --name immiaubot \
+               -e TELEGRAM_BOT_TOKEN=\"${{ secrets.TELEGRAM_BOT_TOKEN }}\" \
+               -v /mnt/stateful_partition/data:/data \
+               $IMAGE && \
+             rm -f /tmp/ar-key.json"
