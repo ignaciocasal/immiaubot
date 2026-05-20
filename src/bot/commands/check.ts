@@ -3,7 +3,7 @@ import path from 'path'
 import { config } from '../../config'
 import { readJson } from '../../storage/readJson'
 import { VisaEstimate, VisaStream } from '../../types'
-import { buildStreamKeyboard, formatVisaEstimate, resolveSubclass, displaySubclass } from '../keyboards/visaOptions'
+import { buildStreamKeyboard, formatVisaEstimate, resolveSubclass, displaySubclass, buildSubclassKeyboard, getPopularSubclasses } from '../keyboards/visaOptions'
 
 function loadVisas(): Record<string, VisaStream[]> {
   return readJson<Record<string, VisaStream[]>>(path.join(config.dataDir, 'visas.json'), {})
@@ -19,8 +19,11 @@ export function registerCheck(bot: TelegramBot): void {
     const subclass = match?.[1]
 
     if (!subclass) {
-      bot.sendMessage(chatId, 'Usage: `/check <subclass>`\nExample: `/check 186`', {
+      const visas = loadVisas()
+      const popular = getPopularSubclasses(visas)
+      bot.sendMessage(chatId, 'Which visa subclass? Tap one below or type `/check <subclass>`', {
         parse_mode: 'Markdown',
+        reply_markup: buildSubclassKeyboard(popular, 'ck'),
       })
       return
     }

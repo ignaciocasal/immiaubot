@@ -4,7 +4,7 @@ import { config } from '../config'
 import { readJson } from '../storage/readJson'
 import { writeJson } from '../storage/writeJson'
 import { VisaEstimate, Subscriptions } from '../types'
-import { buildStreamKeyboard, formatVisaEstimate, displaySubclass } from './keyboards/visaOptions'
+import { buildStreamKeyboard, formatVisaEstimate, displaySubclass, resolveSubclass } from './keyboards/visaOptions'
 
 interface CbQuery {
   id: string
@@ -58,6 +58,15 @@ export function registerCallbackHandler(bot: TelegramBot): void {
         break
       case 'us':
         confirmUnsubscribe(bot, chatId, msgId, param)
+        break
+      case 'ck':
+        handleSubclassPick(bot, chatId, msgId, param, 'cs')
+        break
+      case 'sb':
+        handleSubclassPick(bot, chatId, msgId, param, 'ss')
+        break
+      case 'uv':
+        handleSubclassPick(bot, chatId, msgId, param, 'us')
         break
     }
   })
@@ -143,5 +152,42 @@ function confirmUnsubscribe(
   bot.editMessageText(`❌ Unsubscribed from *${name}* (${sc}).`, {
     chat_id: chatId, message_id: msgId, parse_mode: 'Markdown',
     reply_markup: { inline_keyboard: [] },
+  })
+}
+
+function handleSubclassPick(
+  bot: TelegramBot,
+  chatId: number,
+  msgId: number,
+  subclass: string,
+  nextAction: 'cs' | 'ss' | 'us'
+): void {
+  const visas = loadVisas()
+  const resolved = resolveSubclass(subclass, visas)
+
+  if (!resolved) {
+    bot.editMessageText(`Visa subclass *${subclass.toUpperCase()}* not found.`, {
+      chat_id: chatId, message_id: msgId, parse_mode: 'Markdown',
+      reply_markup: { inline_keyboard: [] },
+    })
+    return
+  }
+
+  const streams = visas[resolved]
+
+  if (streams.length === 1) {
+    if (nextAction === 'cs') {
+      sendEstimateAndClean(bot, chatId, msgId, streams[0].key)
+    } else if (nextAction === 'ss') {
+      confirmSubscribe(bot, chatId, msgId, streams[0].key)
+    } else {
+      confirmUnsubscribe(bot, chatId, msgId, streams[0].key)
+    }
+    return
+  }
+
+  bot.editMessageText(`Subclass *${displaySubclass(resolved)}* has multiple streams:\n\nChoose one:`, {
+    chat_id: chatId, message_id: msgId, parse_mode: 'Markdown',
+    reply_markup: buildStreamKeyboard(streams, nextAction),
   })
 }

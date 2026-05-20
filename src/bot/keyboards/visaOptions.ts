@@ -44,3 +44,25 @@ export function resolveSubclass(
   if (visas[withDash]) return withDash
   return null
 }
+
+export function buildSubclassKeyboard(
+  subclasses: string[],
+  actionPrefix: 'ck' | 'sb' | 'uv'
+): InlineKeyboardMarkup {
+  const rows: InlineKeyboardButton[][] = []
+  const cols = 4
+  for (let i = 0; i < subclasses.length; i += cols) {
+    rows.push(
+      subclasses.slice(i, i + cols).map(sc => ({
+        text: sc,
+        callback_data: `${actionPrefix}:${sc}`,
+      }))
+    )
+  }
+  return { inline_keyboard: rows }
+}
+
+export function getPopularSubclasses(visas: Record<string, unknown>): string[] {
+  const popular = ['186', '189', '190', '482', '485', '491', '500', '600']
+  return popular.filter(sc => visas[sc] || visas[`${sc}-1`])
+}
