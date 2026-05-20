@@ -1,0 +1,29 @@
+name: Deploy to GCP
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Build and push Docker image
+        run: |-
+          gcloud builds submit \
+            --config cloudbuild.yaml
+
+      - name: Update VM container
+        run: |-
+          gcloud compute instances update-container immiaubot \
+            --zone=us-west1-a \
+            --container-image=us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/immiaubot/app:latest \
+            --container-env=TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
+            --container-mount-disk=mount-path="/data",name=immiaubot-data,mode=rw
