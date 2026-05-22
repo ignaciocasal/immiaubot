@@ -40,6 +40,8 @@ export function registerCallbackHandler(bot: TelegramBot): void {
     const chatId = cbQuery.message?.chat.id
     if (!chatId || !cbQuery.data) return
 
+    console.log(`[${new Date().toISOString()}] Callback | Chat ${chatId} | ${cbQuery.data}`)
+
     bot.answerCallbackQuery(cbQuery.id)
 
     const colon = cbQuery.data.indexOf(':')

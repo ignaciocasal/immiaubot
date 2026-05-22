@@ -69,6 +69,15 @@ async function main(): Promise<void> {
       registerList(bot)
       registerCallbackHandler(bot)
 
+      bot.on('message', (msg) => {
+        const m = msg as { chat: { id: number }; from?: { username?: string; first_name?: string }; text?: string }
+        console.log(
+          `[${new Date().toISOString()}] Chat ${m.chat.id}` +
+          `${m.from ? ` | ${m.from.username ? '@' + m.from.username : m.from.first_name || ''}` : ''}` +
+          `${m.text ? ` | ${m.text.replace(/\n/g, '\\n')}` : ''}`
+        )
+      })
+
       console.log('Bot started. Listening for commands...')
 
       const runDailyCheck = async () => {
