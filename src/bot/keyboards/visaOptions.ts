@@ -63,6 +63,6 @@ export function buildSubclassKeyboard(
 }
 
 export function getPopularSubclasses(visas: Record<string, unknown>): string[] {
-  const popular = ['186', '189', '190', '482', '485', '491', '500', '600']
+  const popular = ['186', '189', '190', '417', '482', '500', '600', '820']
   return popular.filter(sc => visas[sc] || visas[`${sc}-1`])
 }
